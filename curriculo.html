@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currículo profissional | Lorran Daniel</title>
+    <meta name="description" content="Visualize e baixe o currículo profissional de Lorran Daniel em português ou inglês." />
+    <meta property="og:title" content="Currículo profissional | Lorran Daniel" />
+    <meta property="og:description" content="Experiência, competências técnicas, projetos, credenciais e idiomas de Lorran Daniel." />
+    <meta property="og:type" content="article" />
+    <link rel="stylesheet" href="css/document-viewer.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="container nav" aria-label="Navegação principal">
+        <a class="brand" href="index.html?lang=pt#curriculo" data-portfolio-link>Lorran Daniel</a>
+        <div class="document-nav-actions">
+          <a class="button" href="index.html?lang=pt#curriculo" data-portfolio-link data-i18n="back">Voltar para o portfólio</a>
+          <select id="languageSelect" class="document-language-select" aria-label="Selecionar idioma">
+            <option value="pt">PT</option>
+            <option value="en">EN</option>
+          </select>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="container document-layout">
+        <div class="document-content">
+          <article class="summary">
+            <p class="eyebrow" data-i18n="eyebrow">Currículo profissional</p>
+            <h1>Lorran Daniel Silva</h1>
+            <p class="description" data-i18n="description">Experiência, competências técnicas, projetos, credenciais e idiomas reunidos em um currículo de uma página.</p>
+
+            <div class="meta-grid">
+              <div class="meta-item">
+                <strong data-i18n="languageLabel">Idioma</strong>
+                <span id="resumeLanguage">Português</span>
+              </div>
+              <div class="meta-item">
+                <strong data-i18n="formatLabel">Formato</strong>
+                <span data-i18n="format">PDF · A4 · 1 página</span>
+              </div>
+              <div class="meta-item">
+                <strong data-i18n="focusLabel">Foco profissional</strong>
+                <span data-i18n="focus">Infraestrutura, Cloud e Cybersecurity</span>
+              </div>
+            </div>
+
+            <div class="actions">
+              <a class="button primary" href="curriculos/Lorran_Daniel_Curriculo_PT.pdf" download data-download data-i18n="download">Baixar currículo</a>
+              <a class="button" href="curriculos/Lorran_Daniel_Curriculo_PT.pdf" target="_blank" rel="noopener noreferrer" data-pdf-link data-i18n="openOriginal">Abrir PDF original</a>
+              <a class="button" href="index.html?lang=pt#curriculo" data-portfolio-link data-i18n="backSection">Voltar aos currículos</a>
+            </div>
+          </article>
+
+          <article class="learned">
+            <p class="section-kicker" data-i18n="contentsKicker">Conteúdo</p>
+            <h2 data-i18n="contentsTitle">O que você encontra</h2>
+            <ul>
+              <li data-i18n="experience">Experiência profissional em infraestrutura e suporte de TI.</li>
+              <li data-i18n="skills">Competências técnicas em cloud, automação, observabilidade e segurança.</li>
+              <li data-i18n="projects">Projetos técnicos, credenciais e idiomas.</li>
+            </ul>
+          </article>
+        </div>
+
+        <aside class="pdf-panel" aria-label="Visualização do currículo">
+          <div class="pdf-header">
+            <div>
+              <p class="section-kicker" data-i18n="resumeLabel">Currículo</p>
+              <h2 data-i18n="previewTitle">Visualização do PDF</h2>
+            </div>
+            <a class="button" href="curriculos/Lorran_Daniel_Curriculo_PT.pdf" target="_blank" rel="noopener noreferrer" data-pdf-link data-i18n="openTab">Abrir em nova aba</a>
+          </div>
+          <object id="resumePdf" class="pdf-frame" data="curriculos/Lorran_Daniel_Curriculo_PT.pdf" type="application/pdf" title="PDF - Currículo de Lorran Daniel em português">
+            <div class="pdf-fallback">
+              <img id="resumePreview" src="curriculos/Lorran_Daniel_Curriculo_PT.png" alt="Prévia do currículo de Lorran Daniel em português" width="1200" height="1698" />
+            </div>
+          </object>
+          <p class="pdf-mobile-note" data-i18n="mobileNote">A visualização direta do PDF pode não funcionar bem em telas menores. Use o botão "Abrir em nova aba" acima para visualizar o currículo com mais conforto.</p>
+        </aside>
+      </section>
+    </main>
+    <script src="js/resume-viewer.js?v=20261030-index"></script>
+  </body>
+</html>

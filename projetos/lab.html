@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Demonstrações locais e interativas dos projetos técnicos de Lorran Daniel."
+    />
+    <title>Laboratórios locais | Lorran Daniel</title>
+    <link rel="stylesheet" href="../css/project-lab.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+    <header class="site-header">
+      <div class="shell header-content">
+        <a class="brand" href="../index.html#inicio">Lorran Daniel</a>
+        <div class="header-actions">
+          <a class="back-link" href="../index.html#projetos">
+            <span aria-hidden="true">←</span>
+            Voltar ao portfólio
+          </a>
+          <select id="languageSelect" class="project-language-select" aria-label="Selecionar idioma">
+            <option value="pt">PT</option>
+            <option value="en">EN</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <main id="conteudo">
+      <section class="project-hero" aria-labelledby="projectTitle">
+        <div class="shell project-hero-grid">
+          <div>
+            <p class="eyebrow" id="projectCategory">Laboratório local</p>
+            <h1 id="projectTitle">Carregando projeto...</h1>
+            <p class="hero-copy" id="projectSummary"></p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="../index.html#projetos">
+                Voltar aos projetos
+              </a>
+              <button class="button" id="goToDemo" type="button">Abrir demonstração</button>
+            </div>
+          </div>
+
+          <aside class="local-note" aria-label="Modo de demonstração">
+            <p class="local-note-label">Modo local</p>
+            <strong>Funciona sem servidor</strong>
+            <p>
+              Os dados abaixo são exemplos sintéticos. Nada é enviado para a internet e nenhum
+              serviço precisa estar ligado para testar a interface.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="project-switcher" aria-label="Navegação entre projetos">
+        <div class="shell switcher-content">
+          <label for="projectSelect">Projeto em demonstração</label>
+          <select id="projectSelect" name="project"></select>
+          <nav class="page-nav" aria-label="Navegação da página">
+            <a href="#visao-geral">Visão geral</a>
+            <a href="#demonstracao">Demonstração</a>
+          </nav>
+        </div>
+      </section>
+
+      <section class="section" id="visao-geral" aria-labelledby="overviewTitle">
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Projeto</p>
+              <h2 id="overviewTitle">Como a solução foi pensada</h2>
+            </div>
+            <p id="projectObjective"></p>
+          </div>
+
+          <div class="metrics-grid" id="projectMetrics" aria-label="Indicadores do projeto"></div>
+
+          <div class="details-grid">
+            <section class="detail-section" aria-labelledby="problemTitle">
+              <p class="detail-label">Problema</p>
+              <h3 id="problemTitle">Contexto operacional</h3>
+              <p id="projectProblem"></p>
+            </section>
+            <section class="detail-section" aria-labelledby="solutionTitle">
+              <p class="detail-label">Solução</p>
+              <h3 id="solutionTitle">Abordagem proposta</h3>
+              <p id="projectSolution"></p>
+            </section>
+          </div>
+
+          <div class="architecture-section">
+            <div>
+              <p class="detail-label">Fluxo da aplicação</p>
+              <h3>Da informação à decisão</h3>
+            </div>
+            <ol class="flow-list" id="projectFlow"></ol>
+          </div>
+
+          <div class="tech-section">
+            <p class="detail-label">Tecnologias e conceitos</p>
+            <div class="tech-list" id="projectTechnologies"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section demo-section" id="demonstracao" aria-labelledby="demoTitle">
+        <div class="shell">
+          <div class="section-heading demo-heading">
+            <div>
+              <p class="eyebrow">Demonstração prática</p>
+              <h2 id="demoTitle">Exemplo local</h2>
+            </div>
+            <p id="demoDescription"></p>
+          </div>
+
+          <div id="demoRoot"></div>
+          <p class="status-message" id="statusMessage" aria-live="polite"></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-content">
+        <span>Portfólio técnico de Lorran Daniel</span>
+        <a href="../index.html#contato">Contato</a>
+      </div>
+    </footer>
+
+    <script src="../js/project-lab.js?v=20260813"></script>
+    <script src="../js/project-lab-i18n.js?v=20261030-index"></script>
+  </body>
+</html>

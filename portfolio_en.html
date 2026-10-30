@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lorran Daniel | English portfolio</title>
+    <script>
+      const target = new URL("index.html", window.location.href);
+      target.search = window.location.search;
+      target.searchParams.set("lang", "en");
+      target.hash = window.location.hash;
+      window.location.replace(target.href);
+    </script>
+  </head>
+  <body>
+    <p><a href="index.html?lang=en">Open the English portfolio</a></p>
+  </body>
+</html>

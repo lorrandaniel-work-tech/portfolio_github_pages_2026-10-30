@@ -1,0 +1,44 @@
+# Local secrets; keep the documented environment template available.
+.env
+.env.*
+!.env.example
+.secrets/
+secrets/
+*.key
+*.pem
+*.pfx
+*.p12
+
+# Dependencies, virtual environments, and generated caches.
+.venv/
+venv/
+node_modules/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+.coverage
+.coverage.*
+htmlcov/
+*.egg-info/
+/build/
+/dist/
+
+# Terraform state and local values; example files remain versioned.
+.terraform/
+*.tfstate
+*.tfstate.*
+terraform.tfvars
+*.auto.tfvars
+
+# Runtime output. Synthetic logs in sample_data are project source files.
+/portfolio-cloud-soc-guardian/data/
+/portfolio-cloud-soc-guardian/reports/
+logs/
+
+# Recovery archives and local backups.
+*.zip
+/backup/
+/backups/

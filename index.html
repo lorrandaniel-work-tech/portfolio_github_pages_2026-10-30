@@ -1,0 +1,2190 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lorran Daniel | Infraestrutura, Cloud e Cybersecurity</title>
+    <meta
+      name="description"
+      content="Portfólio técnico de Lorran Daniel, Analista de Infraestrutura com foco em cloud, cybersecurity, automação e observabilidade."
+    />
+    <meta property="og:title" content="Lorran Daniel | Infraestrutura, Cloud e Cybersecurity" />
+    <meta
+      property="og:description"
+      content="Portfólio técnico de Lorran Daniel, Analista de Infraestrutura com foco em cloud, segurança, automação e observabilidade."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="img/lorran-daniel-profile.jpg" />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #090b10;
+        --panel: rgba(255, 255, 255, 0.04);
+        --panel-strong: #0d111a;
+        --border: rgba(255, 255, 255, 0.1);
+        --text: #f8fafc;
+        --muted: #a1a1aa;
+        --soft: #d4d4d8;
+        --teal: #3235f4;
+        --sky: #c7d2fe;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at top left, rgba(50, 53, 244, 0.18), transparent 32%),
+          radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.16), transparent 30%),
+          linear-gradient(180deg, #090b10 0%, #0c1018 48%, #090b10 100%);
+        color: var(--text);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        width: min(100% - 40px, 1180px);
+        margin: 0 auto;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        border-bottom: 1px solid var(--border);
+        background: rgba(9, 11, 16, 0.82);
+        backdrop-filter: blur(18px);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 16px 0;
+      }
+
+      .brand {
+        flex-shrink: 0;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+      }
+
+      .nav-links {
+        display: flex;
+        min-width: 0;
+        overflow-x: auto;
+        align-items: center;
+        gap: 24px;
+        color: var(--muted);
+        font-size: 0.94rem;
+      }
+
+      .nav-links a:hover {
+        color: white;
+      }
+
+      .nav-links .nav-demo {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        min-height: 38px;
+        border: 1px solid rgba(50, 53, 244, 0.72);
+        border-radius: 6px;
+        background: rgba(50, 53, 244, 0.16);
+        color: #e0e7ff;
+        font-weight: 800;
+        padding: 0 12px;
+        white-space: nowrap;
+      }
+
+      .nav-links .nav-demo:hover {
+        border-color: rgba(129, 140, 248, 0.95);
+        background: rgba(50, 53, 244, 0.28);
+        color: white;
+      }
+
+      .language-select {
+        min-height: 38px;
+        border: 1px solid rgba(50, 53, 244, 0.7);
+        border-radius: 6px;
+        background: rgba(50, 53, 244, 0.1);
+        color: var(--text);
+        cursor: pointer;
+        font: inherit;
+        font-size: 0.82rem;
+        font-weight: 800;
+        padding: 0 9px;
+      }
+
+      .language-select:hover {
+        border-color: rgba(129, 140, 248, 0.95);
+        background: rgba(50, 53, 244, 0.2);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        grid-template-areas:
+          "intro portrait"
+          "approach stack";
+        gap: 32px 48px;
+        align-items: start;
+        padding: 88px 0 112px;
+      }
+
+      .hero-content {
+        grid-area: intro;
+        align-self: center;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: center;
+      }
+
+      .eyebrow {
+        width: fit-content;
+        margin: 0 0 24px;
+        border: 1px solid rgba(50, 53, 244, 0.3);
+        border-radius: 999px;
+        background: rgba(50, 53, 244, 0.1);
+        color: #d9dcff;
+        padding: 8px 16px;
+        font-size: 0.9rem;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        max-width: 620px;
+        margin-bottom: 24px;
+        color: white;
+        font-size: 3.1rem;
+        line-height: 1.08;
+        letter-spacing: 0;
+      }
+
+      .hero-text {
+        max-width: 590px;
+        color: var(--soft);
+        font-size: 1.12rem;
+        line-height: 1.8;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 36px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        border-radius: 8px;
+        padding: 0 20px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        color: white;
+        font-weight: 700;
+        transition: 180ms ease;
+      }
+
+      .button:hover {
+        border-color: rgba(199, 210, 254, 0.7);
+        background: rgba(199, 210, 254, 0.1);
+      }
+
+      .button.primary {
+        border-color: #3235f4;
+        background: #3235f4;
+        color: white;
+      }
+
+      .button.primary:hover {
+        border-color: #4f52ff;
+        background: #4f52ff;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        max-width: 660px;
+        margin-top: 48px;
+        text-align: left;
+      }
+
+      .stat {
+        border-left: 1px solid rgba(255, 255, 255, 0.15);
+        padding-left: 16px;
+      }
+
+      .stat strong {
+        display: block;
+        color: white;
+        font-size: 1.6rem;
+      }
+
+      .stat span {
+        display: block;
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .skills-panel,
+      .card,
+      .roadmap-card,
+      .cert-card,
+      .certificate-card {
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--panel);
+      }
+
+      .skills-panel {
+        grid-area: stack;
+        align-self: stretch;
+        min-width: 0;
+        overflow: hidden;
+        padding: 20px;
+        box-shadow: 0 28px 60px rgba(0, 0, 0, 0.38);
+      }
+
+      .work-profile {
+        grid-area: approach;
+        align-self: stretch;
+        min-width: 0;
+        scroll-margin-top: 96px;
+        border: 1px solid var(--border);
+        border-left: 3px solid var(--teal);
+        border-radius: 8px;
+        background: var(--panel);
+        padding: 28px;
+      }
+
+      .work-profile h2 {
+        margin-bottom: 18px;
+        color: white;
+        font-size: 1.75rem;
+        line-height: 1.25;
+      }
+
+      .work-intro {
+        margin-bottom: 0;
+        color: var(--soft);
+        font-size: 1rem;
+        line-height: 1.75;
+      }
+
+      .work-principles {
+        margin: 24px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .work-principles li {
+        display: grid;
+        grid-template-columns: 28px minmax(0, 1fr);
+        gap: 14px;
+        border-top: 1px solid var(--border);
+        padding: 18px 0;
+      }
+
+      .work-principles li:last-child {
+        padding-bottom: 0;
+      }
+
+      .work-number {
+        color: var(--sky);
+        font-size: 0.8rem;
+        font-weight: 800;
+        line-height: 1.6;
+        padding-top: 2px;
+      }
+
+      .work-principles h3 {
+        margin-bottom: 6px;
+        color: var(--text);
+        font-size: 1rem;
+        line-height: 1.4;
+      }
+
+      .work-principles p {
+        margin-bottom: 0;
+        color: var(--muted);
+        font-size: 0.94rem;
+        line-height: 1.65;
+      }
+
+      .profile-card {
+        grid-area: portrait;
+        position: relative;
+        overflow: hidden;
+        margin: 0;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--panel);
+        box-shadow: 0 28px 60px rgba(0, 0, 0, 0.38);
+      }
+
+      .profile-card::after {
+        content: "";
+        position: absolute;
+        inset: auto 0 0;
+        height: 44%;
+        background: linear-gradient(180deg, transparent, rgba(9, 11, 16, 0.9));
+        pointer-events: none;
+      }
+
+      .profile-photo {
+        display: block;
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        object-position: center 30%;
+        filter: saturate(1.03) contrast(1.04);
+      }
+
+      .profile-caption {
+        position: absolute;
+        left: 18px;
+        right: 18px;
+        bottom: 18px;
+        z-index: 1;
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 14px;
+      }
+
+      .profile-caption strong {
+        display: block;
+        color: white;
+        font-size: 1.1rem;
+      }
+
+      .profile-caption span {
+        display: block;
+        margin-top: 4px;
+        color: var(--soft);
+        font-size: 0.9rem;
+      }
+
+      .profile-signal {
+        border: 1px solid rgba(50, 53, 244, 0.28);
+        border-radius: 999px;
+        background: rgba(50, 53, 244, 0.1);
+        color: #d9dcff;
+        flex: 0 0 auto;
+        padding: 8px 12px;
+        font-size: 0.82rem;
+        font-weight: 800;
+      }
+
+      .panel-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 16px;
+      }
+
+      .panel-header p {
+        margin-bottom: 4px;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .panel-header h2 {
+        margin-bottom: 0;
+        font-size: 1.25rem;
+      }
+
+      .status {
+        border-radius: 6px;
+        background: rgba(50, 53, 244, 0.12);
+        color: #d1fae5;
+        padding: 8px 12px;
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .skill {
+        overflow-wrap: anywhere;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--panel-strong);
+        padding: 12px;
+        color: #e4e4e7;
+        font-size: 0.94rem;
+        transition: 180ms ease;
+      }
+
+      .skill:hover {
+        border-color: rgba(50, 53, 244, 0.5);
+        background: rgba(50, 53, 244, 0.1);
+      }
+
+      .goal {
+        margin-top: 20px;
+        border: 1px solid rgba(199, 210, 254, 0.2);
+        border-radius: 8px;
+        background: rgba(199, 210, 254, 0.1);
+        padding: 16px;
+        color: #e0e7ff;
+        line-height: 1.65;
+      }
+
+      section {
+        border-top: 1px solid var(--border);
+        padding: 80px 0;
+      }
+
+      .section-grid {
+        display: grid;
+        grid-template-columns: 0.7fr 1fr;
+        gap: 40px;
+      }
+
+      .section-kicker {
+        margin-bottom: 12px;
+        color: var(--teal);
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+      }
+
+      .section-title {
+        margin-bottom: 0;
+        color: white;
+        font-size: clamp(2rem, 4vw, 2.7rem);
+        line-height: 1.08;
+      }
+
+      .about-copy {
+        color: var(--soft);
+        font-size: 1.08rem;
+        line-height: 1.85;
+      }
+
+      .about-copy p:last-child {
+        margin-bottom: 0;
+      }
+
+      .experience-entry {
+        border: 1px solid var(--border);
+        border-left: 3px solid var(--teal);
+        border-radius: 8px;
+        background: var(--panel);
+        padding: 24px;
+      }
+
+      .experience-listing {
+        display: grid;
+        gap: 16px;
+      }
+
+      .experience-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .experience-company {
+        margin-bottom: 8px;
+        color: var(--teal);
+        font-size: 0.82rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .experience-entry h3 {
+        margin-bottom: 0;
+        color: white;
+        font-size: 1.3rem;
+      }
+
+      .experience-current {
+        flex: 0 0 auto;
+        border: 1px solid rgba(110, 231, 221, 0.36);
+        border-radius: 999px;
+        background: rgba(110, 231, 221, 0.08);
+        color: #9ef3ec;
+        font-size: 0.78rem;
+        font-weight: 800;
+        padding: 6px 10px;
+      }
+
+      .experience-period {
+        flex: 0 0 auto;
+        color: var(--muted);
+        font-size: 0.82rem;
+        font-weight: 800;
+        padding-top: 4px;
+      }
+
+      .experience-meta {
+        margin: 16px 0 0;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .experience-copy {
+        margin: 18px 0 0;
+        color: var(--soft);
+        line-height: 1.75;
+      }
+
+      .experience-list {
+        display: grid;
+        gap: 10px;
+        margin: 22px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .experience-list li {
+        border-left: 1px solid rgba(199, 210, 254, 0.35);
+        color: var(--muted);
+        line-height: 1.6;
+        padding-left: 14px;
+      }
+
+      #curriculo {
+        scroll-margin-top: 80px;
+      }
+
+      .resume-section-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+      }
+
+      .resume-panel {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        min-width: 0;
+        gap: 32px;
+        border: 1px solid var(--border);
+        border-left: 3px solid var(--teal);
+        border-radius: 8px;
+        background: var(--panel);
+        padding: 28px;
+      }
+
+      .resume-panel h3 {
+        margin-bottom: 10px;
+        color: white;
+        font-size: 1.35rem;
+      }
+
+      .resume-panel p {
+        max-width: 650px;
+        margin-bottom: 0;
+        color: var(--soft);
+        line-height: 1.7;
+      }
+
+      .resume-actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 10px;
+      }
+
+      .resume-actions .button:focus-visible {
+        outline: 3px solid var(--sky);
+        outline-offset: 4px;
+      }
+
+      .language-modal[hidden] {
+        display: none;
+      }
+
+      .language-modal {
+        position: fixed;
+        z-index: 100;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        background: rgba(4, 6, 12, 0.82);
+        padding: 24px;
+      }
+
+      .language-dialog {
+        width: min(100%, 520px);
+        border: 1px solid rgba(199, 210, 254, 0.28);
+        border-radius: 8px;
+        background: #101424;
+        box-shadow: 0 28px 80px rgba(0, 0, 0, 0.48);
+        padding: 32px;
+        text-align: center;
+      }
+
+      .language-dialog h2 {
+        margin-bottom: 12px;
+        color: white;
+        font-size: 1.8rem;
+      }
+
+      .language-dialog p {
+        margin-bottom: 0;
+        color: var(--soft);
+        line-height: 1.7;
+      }
+
+      .language-options {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 28px;
+      }
+
+      .language-option {
+        min-height: 52px;
+        border: 1px solid rgba(199, 210, 254, 0.28);
+        border-radius: 7px;
+        background: rgba(255, 255, 255, 0.03);
+        color: white;
+        cursor: pointer;
+        font: inherit;
+        font-size: 1rem;
+        font-weight: 800;
+        transition: 180ms ease;
+      }
+
+      .language-option:hover,
+      .language-option:focus-visible {
+        border-color: #7376ff;
+        background: rgba(50, 53, 244, 0.22);
+      }
+
+      .section-heading {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 28px;
+        margin-bottom: 40px;
+      }
+
+      .section-heading p:last-child {
+        max-width: 560px;
+        margin-bottom: 0;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .card {
+        padding: 24px;
+        transition: 180ms ease;
+      }
+
+      .card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(50, 53, 244, 0.4);
+        background: rgba(255, 255, 255, 0.055);
+      }
+
+      .card-top {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 24px;
+      }
+
+      .badge {
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--panel-strong);
+        padding: 8px 12px;
+        color: var(--soft);
+        font-size: 0.9rem;
+      }
+
+      .project-mark {
+        width: 40px;
+        height: 40px;
+        border: 1px solid rgba(50, 53, 244, 0.3);
+        border-radius: 6px;
+        background: rgba(50, 53, 244, 0.1);
+        flex: 0 0 auto;
+      }
+
+      .card h3,
+      .cert-card h3,
+      .certificate-card h3,
+      .roadmap-card h3 {
+        margin-bottom: 0;
+        color: white;
+      }
+
+      .card p {
+        margin-top: 16px;
+        color: var(--muted);
+        line-height: 1.75;
+      }
+
+      .impact {
+        margin-top: 20px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--panel-strong);
+        padding: 16px;
+        color: var(--soft);
+        line-height: 1.65;
+      }
+
+      .impact strong {
+        color: white;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 20px;
+      }
+
+      .tag {
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: rgba(0, 0, 0, 0.2);
+        padding: 8px 12px;
+        color: var(--soft);
+        font-size: 0.9rem;
+      }
+
+      .roadmap-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .roadmap-card {
+        position: relative;
+        overflow: hidden;
+        min-height: 248px;
+        transition: 180ms ease;
+      }
+
+      .roadmap-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0.18;
+        pointer-events: none;
+        transition: 180ms ease;
+      }
+
+      .roadmap-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(50, 53, 244, 0.42);
+      }
+
+      .roadmap-card:hover::before {
+        opacity: 0.28;
+      }
+
+      .roadmap-card.cloud::before {
+        background:
+          radial-gradient(circle at 26% 28%, rgba(199, 210, 254, 0.8), transparent 20%),
+          linear-gradient(135deg, rgba(14, 165, 233, 0.35), transparent 58%);
+      }
+
+      .roadmap-card.cyber::before {
+        background:
+          linear-gradient(135deg, rgba(50, 53, 244, 0.3), transparent 44%),
+          repeating-linear-gradient(90deg, rgba(50, 53, 244, 0.18) 0 1px, transparent 1px 16px);
+      }
+
+      .roadmap-card.devsecops::before {
+        background:
+          linear-gradient(130deg, transparent 0 34%, rgba(250, 204, 21, 0.35) 35% 41%, transparent 42%),
+          radial-gradient(circle at 70% 20%, rgba(250, 204, 21, 0.35), transparent 22%);
+      }
+
+      .roadmap-card.observability::before {
+        background:
+          radial-gradient(circle at 50% 50%, rgba(50, 53, 244, 0.2), transparent 22%),
+          repeating-radial-gradient(circle at 50% 50%, rgba(50, 53, 244, 0.22) 0 1px, transparent 1px 18px);
+      }
+
+      .roadmap-card,
+      .cert-card {
+        padding: 20px;
+      }
+
+      .roadmap-icon {
+        position: relative;
+        display: block;
+        width: 78px;
+        height: 54px;
+        margin-bottom: 20px;
+      }
+
+      .roadmap-icon.cloud::before,
+      .roadmap-icon.cloud::after {
+        content: "";
+        position: absolute;
+        background: rgba(199, 210, 254, 0.92);
+        box-shadow: 0 0 22px rgba(199, 210, 254, 0.28);
+      }
+
+      .roadmap-icon.cloud::before {
+        left: 8px;
+        right: 6px;
+        bottom: 9px;
+        height: 22px;
+        border-radius: 18px;
+      }
+
+      .roadmap-icon.cloud::after {
+        left: 18px;
+        bottom: 18px;
+        width: 42px;
+        height: 32px;
+        border-radius: 28px 28px 12px 12px;
+      }
+
+      .roadmap-icon.shield::before {
+        content: "";
+        position: absolute;
+        left: 18px;
+        top: 2px;
+        width: 42px;
+        height: 48px;
+        background: rgba(50, 53, 244, 0.88);
+        clip-path: polygon(50% 0, 92% 16%, 82% 76%, 50% 100%, 18% 76%, 8% 16%);
+        box-shadow: 0 0 24px rgba(50, 53, 244, 0.3);
+      }
+
+      .roadmap-icon.shield::after {
+        content: "";
+        position: absolute;
+        left: 35px;
+        top: 15px;
+        width: 9px;
+        height: 24px;
+        border-radius: 999px;
+        background: #090b10;
+        box-shadow: 0 0 0 999px transparent;
+      }
+
+      .roadmap-icon.bolt::before {
+        content: "";
+        position: absolute;
+        left: 24px;
+        top: 0;
+        width: 34px;
+        height: 54px;
+        background: #fde68a;
+        clip-path: polygon(52% 0, 12% 50%, 42% 50%, 28% 100%, 86% 36%, 54% 36%);
+        filter: drop-shadow(0 0 18px rgba(250, 204, 21, 0.45));
+      }
+
+      .roadmap-icon.pulse::before,
+      .roadmap-icon.pulse::after {
+        content: "";
+        position: absolute;
+        border: 2px solid rgba(50, 53, 244, 0.75);
+        border-radius: 50%;
+      }
+
+      .roadmap-icon.pulse::before {
+        inset: 8px 20px;
+      }
+
+      .roadmap-icon.pulse::after {
+        inset: 0 12px;
+        opacity: 0.42;
+      }
+
+      .roadmap-icon.pulse span {
+        position: absolute;
+        left: 10px;
+        right: 10px;
+        top: 26px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, rgba(50, 53, 244, 0.95), transparent);
+      }
+
+      .step-number {
+        display: grid;
+        place-items: center;
+        width: 40px;
+        height: 40px;
+        margin-bottom: 14px;
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.92);
+        color: #090b10;
+        font-weight: 800;
+      }
+
+      .roadmap-card p,
+      .cert-card p,
+      .certificate-card p {
+        margin: 12px 0 0;
+        color: var(--muted);
+        font-size: 0.94rem;
+        line-height: 1.7;
+      }
+
+      .cert-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .cert-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 24px;
+      }
+
+      .cert-date {
+        color: #71717a;
+        font-size: 0.9rem;
+        white-space: nowrap;
+      }
+
+      .cert-org {
+        margin-bottom: 20px;
+        border: 1px solid rgba(199, 210, 254, 0.2);
+        border-radius: 6px;
+        background: rgba(199, 210, 254, 0.1);
+        color: #e0e7ff;
+        padding: 18px 16px;
+        font-weight: 800;
+      }
+
+      .meta-list {
+        display: grid;
+        gap: 8px;
+        margin-top: 18px;
+      }
+
+      .meta-item {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        padding-bottom: 8px;
+        color: var(--muted);
+        font-size: 0.88rem;
+        line-height: 1.45;
+      }
+
+      .meta-item:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .meta-item strong {
+        color: white;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+
+      .meta-item span {
+        overflow-wrap: anywhere;
+        text-align: right;
+      }
+
+      .cert-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 42px;
+        margin-top: 20px;
+        border: 1px solid rgba(50, 53, 244, 0.28);
+        border-radius: 6px;
+        background: rgba(50, 53, 244, 0.08);
+        color: #d9dcff;
+        padding: 0 14px;
+        font-size: 0.92rem;
+        font-weight: 700;
+        transition: 180ms ease;
+      }
+
+      .cert-link:hover {
+        border-color: rgba(50, 53, 244, 0.58);
+        background: rgba(50, 53, 244, 0.14);
+      }
+
+      .certificate-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .certificate-card {
+        padding: 18px;
+      }
+
+      .certificate-card h3 {
+        margin-top: 14px;
+        font-size: 1rem;
+        line-height: 1.4;
+      }
+
+      .certificate-card p {
+        min-height: 48px;
+      }
+
+      .certificate-card .cert-link {
+        min-height: 40px;
+        margin-top: 16px;
+      }
+
+      .contact {
+        text-align: center;
+      }
+
+      .contact .section-title {
+        max-width: 820px;
+        margin: 0 auto;
+      }
+
+      .contact-copy {
+        max-width: 720px;
+        margin: 24px auto 0;
+        color: var(--muted);
+        font-size: 1.08rem;
+        line-height: 1.8;
+      }
+
+      .contact .actions {
+        justify-content: center;
+      }
+
+      .contact a[href^="mailto:"] {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+      }
+
+      @media (max-width: 900px) {
+        .resume-panel {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .resume-actions {
+          justify-content: flex-start;
+        }
+
+        .hero,
+        .section-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          grid-template-areas:
+            "intro"
+            "portrait"
+            "approach"
+            "stack";
+          padding-top: 64px;
+        }
+
+        h1 {
+          font-size: 2.7rem;
+        }
+
+        .projects-grid,
+        .cert-grid,
+        .certificate-grid,
+        .roadmap-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .section-heading {
+          align-items: start;
+          flex-direction: column;
+        }
+      }
+
+      @media (max-width: 680px) {
+        .work-profile {
+          padding: 22px;
+        }
+
+        #curriculo {
+          scroll-margin-top: 120px;
+        }
+
+        .resume-panel {
+          padding: 20px;
+        }
+
+        .container {
+          width: min(100% - 28px, 1180px);
+        }
+
+        .nav {
+          align-items: flex-start;
+          gap: 12px;
+          flex-direction: column;
+        }
+
+        .nav-links {
+          width: 100%;
+          gap: 14px;
+          overflow-x: auto;
+          padding-bottom: 2px;
+        }
+
+        .stats {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          font-size: 2.2rem;
+        }
+
+        .panel-header,
+        .cert-top,
+        .experience-header {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .language-dialog {
+          padding: 26px 20px;
+        }
+
+        .language-options {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="language-modal" id="languageModal" role="dialog" aria-modal="true" aria-labelledby="languageChoiceTitle" hidden>
+      <div class="language-dialog">
+        <p class="section-kicker">PORTFÓLIO / PORTFOLIO</p>
+        <h2 id="languageChoiceTitle">Escolha seu idioma</h2>
+        <p>Choose your preferred language to explore the portfolio.</p>
+        <div class="language-options">
+          <button class="language-option" type="button" data-language-choice="pt">Português</button>
+          <button class="language-option" type="button" data-language-choice="en">English</button>
+        </div>
+      </div>
+    </div>
+    <header class="site-header">
+      <nav class="container nav" aria-label="Navegação principal">
+        <a class="brand" href="#inicio">Lorran Daniel</a>
+
+        <div class="nav-links">
+          <a href="#sobre">Sobre</a>
+          <a href="#experiencia">Experiência</a>
+          <a href="#curriculo">Currículo</a>
+          <a href="#projetos">Projetos</a>
+          <a class="nav-demo" href="projetos/lab.html?project=cloud-soc-guardian&amp;view=demo">
+            Cloud SOC Guardian <span aria-hidden="true">↗</span>
+          </a>
+          <a href="#certificacoes">Certificações</a>
+          <a href="#certificados">Certificados</a>
+          <a href="#contato">Contato</a>
+          <select id="languageSelect" class="language-select" aria-label="Selecionar idioma">
+            <option value="pt">PT</option>
+            <option value="en">EN</option>
+          </select>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container hero" id="inicio">
+        <div class="hero-content">
+          <p class="eyebrow">Infraestrutura | Cloud | Cybersecurity</p>
+
+          <h1>Portfólio técnico em infraestrutura, cloud e segurança.</h1>
+
+          <p class="hero-text">
+            Profissional de Infraestrutura e Suporte de TI com 4 anos de experiência. Atualmente,
+            presto suporte VIP de TI diretamente a diretores e à liderança executiva da Localiza&amp;Co.
+          </p>
+
+          <div class="actions">
+            <a class="button primary" href="#projetos">Ver projetos</a>
+            <a class="button" href="projetos/lab.html?project=cloud-soc-guardian&amp;view=demo">
+              Abrir Cloud SOC Guardian
+            </a>
+            <a class="button" href="#contato">Entrar em contato</a>
+          </div>
+
+          <div class="stats" aria-label="Resumo do portfólio">
+            <div class="stat">
+              <strong>6</strong>
+              <span>Projetos práticos</span>
+            </div>
+            <div class="stat">
+              <strong>18</strong>
+              <span>Certificados</span>
+            </div>
+            <div class="stat">
+              <strong>64h</strong>
+              <span>Carga horária confirmada</span>
+            </div>
+          </div>
+        </div>
+
+        <figure class="profile-card">
+            <img
+              class="profile-photo"
+              src="img/lorran-daniel-profile.jpg"
+              alt="Foto profissional de Lorran Daniel"
+            />
+            <figcaption class="profile-caption">
+              <span>
+                <strong>Lorran Daniel</strong>
+                <span>Infraestrutura | Cloud | Cybersecurity</span>
+              </span>
+              <span class="profile-signal">Disponível</span>
+            </figcaption>
+        </figure>
+
+        <article id="como-trabalho" class="work-profile" aria-labelledby="workStyleTitle">
+          <p class="section-kicker">Como trabalho</p>
+          <h2 id="workStyleTitle">Diagnóstico, organização e continuidade.</h2>
+          <p class="work-intro">
+            Atuo com suporte técnico N1/N2 e atendimento VIP a diretores e à liderança executiva,
+            combinando administração de infraestrutura, monitoramento proativo e documentação técnica.
+          </p>
+          <ul class="work-principles">
+            <li>
+              <span class="work-number" aria-hidden="true">01</span>
+              <div>
+                <h3>Diagnóstico e implantação</h3>
+                <p>Investigo incidentes e preparo ambientes, de hardware e servidores à personalização e implantação em massa de imagens Windows com WDS/MDT.</p>
+              </div>
+            </li>
+            <li>
+              <span class="work-number" aria-hidden="true">02</span>
+              <div>
+                <h3>Gestão e monitoramento</h3>
+                <p>Trabalho com incidentes, solicitações e mudanças no ServiceNow e monitoramento da infraestrutura com Zabbix para identificar problemas de forma proativa.</p>
+              </div>
+            </li>
+            <li>
+              <span class="work-number" aria-hidden="true">03</span>
+              <div>
+                <h3>Documentação e conhecimento</h3>
+                <p>Produzo documentação técnica, manuais de suporte e guias de usuário para padronizar processos e compartilhar conhecimento.</p>
+              </div>
+            </li>
+          </ul>
+        </article>
+
+        <aside class="skills-panel" aria-label="Stack principal">
+            <div class="panel-header">
+              <div>
+                <p>Stack principal</p>
+                <h2>Cyber Cloud Lab</h2>
+              </div>
+              <span class="status">Online</span>
+            </div>
+
+            <div class="skills-grid">
+              <span class="skill">Infraestrutura</span>
+              <span class="skill">Cybersecurity</span>
+              <span class="skill">Cloud</span>
+              <span class="skill">Docker</span>
+              <span class="skill">Linux</span>
+              <span class="skill">Azure</span>
+              <span class="skill">AWS</span>
+              <span class="skill">PowerShell</span>
+              <span class="skill">Python</span>
+              <span class="skill">Inglês C1 Advanced</span>
+              <span class="skill">Zabbix</span>
+              <span class="skill">Grafana</span>
+              <span class="skill">Wazuh</span>
+              <span class="skill">Virtualização</span>
+              <span class="skill">Hardening</span>
+              <span class="skill">Microsoft 365</span>
+              <span class="skill">ServiceNow</span>
+              <span class="skill">WDS/MDT</span>
+            </div>
+
+            <p class="goal">
+              Objetivo: transitar para cybersecurity e cloud computing, apoiado na minha experiência
+              em infraestrutura de TI, redes e gestão de acessos.
+            </p>
+        </aside>
+      </div>
+
+      <section id="sobre">
+        <div class="container section-grid">
+          <div>
+            <p class="section-kicker">Sobre</p>
+            <h2 class="section-title">Perfil profissional</h2>
+          </div>
+
+          <div class="about-copy">
+            <p>
+              Com cerca de quatro anos de experiência em infraestrutura e suporte de TI, atuo na
+              sustentação de ambientes corporativos, administração de sistemas, troubleshooting,
+              virtualização, redes e práticas de segurança.
+            </p>
+            <p>
+              Meu foco profissional está em Cloud Computing, Cybersecurity, automação e
+              observabilidade. Desenvolvo laboratórios com Docker, Linux, Zabbix, Grafana, Wazuh
+              e soluções voltadas para monitoramento e segurança.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="experiencia">
+        <div class="container section-grid">
+          <div>
+            <p class="section-kicker">Experiência</p>
+            <h2 class="section-title">Atuação profissional</h2>
+          </div>
+
+          <div class="experience-listing">
+            <article class="experience-entry">
+              <div class="experience-header">
+                <div>
+                  <p class="experience-company">DXC Technology</p>
+                  <h3>Analista de Serviços de Infraestrutura II</h3>
+                </div>
+                <span class="experience-current">Atual</span>
+              </div>
+              <p class="experience-meta">Julho de 2025 - atual | Belo Horizonte, MG</p>
+              <p class="experience-copy">
+                Administração de contas e licenças Microsoft 365, análise de causa raiz e suporte a
+                infraestrutura corporativa com foco em continuidade operacional e controle de acesso.
+              </p>
+              <ul class="experience-list">
+                <li>RCA e troubleshooting de incidentes, solicitações e backlog.</li>
+                <li>Suporte a serviços de infraestrutura, rede, Microsoft Azure e endpoints macOS.</li>
+              </ul>
+            </article>
+
+            <article class="experience-entry">
+              <div class="experience-header">
+                <div>
+                  <p class="experience-company">GMUD Serviços e Informática Ltda</p>
+                  <h3>Analista de Suporte</h3>
+                </div>
+                <span class="experience-period">Outubro de 2024 - Agosto de 2025</span>
+              </div>
+              <p class="experience-copy">
+                Atendimento remoto, diagnóstico de falhas em sistemas, softwares e hardware, com
+                gestão de tickets orientada a SLA.
+              </p>
+              <ul class="experience-list">
+                <li>Documentação de processos e apoio a testes e atualizações de software.</li>
+              </ul>
+            </article>
+
+            <article class="experience-entry">
+              <div class="experience-header">
+                <div>
+                  <p class="experience-company">Algar Tech</p>
+                  <h3>Técnico de Suporte Júnior</h3>
+                </div>
+                <span class="experience-period">Agosto de 2022 - Outubro de 2024</span>
+              </div>
+              <p class="experience-copy">
+                Suporte técnico remoto, instalação e configuração de sistemas e documentação de
+                soluções para manter a continuidade dos serviços.
+              </p>
+              <ul class="experience-list">
+                <li>Gestão de tickets e administração de contas de usuário via Netadmin.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="curriculo">
+        <div class="container section-grid resume-section-grid">
+          <div>
+            <p class="section-kicker">Currículo</p>
+            <h2 class="section-title">Versões profissionais</h2>
+          </div>
+
+          <div class="resume-panel">
+            <div>
+              <h3>Currículo atualizado</h3>
+              <p>
+                Experiência, competências técnicas, projetos, credenciais e idiomas em um PDF de uma
+                página. Visualize ou baixe a versão no idioma selecionado.
+              </p>
+            </div>
+            <div class="resume-actions">
+              <a class="button primary" href="curriculo.html?lang=pt">Visualizar currículo</a>
+              <a class="button" href="curriculos/Lorran_Daniel_Curriculo_PT.pdf" download data-resume-download>Baixar currículo</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projetos" class="filter-section">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">Projetos</p>
+              <h2 class="section-title">Portfólio técnico</h2>
+            </div>
+            <p>
+              Cada projeto deve ter repositório, prints, objetivo, arquitetura, tecnologias e
+              aprendizados.
+            </p>
+          </div>
+
+          <div class="filter-container" aria-label="Filtrar projetos">
+            <button class="filter-btn active" type="button" data-filter="all">Todos</button>
+            <button class="filter-btn" type="button" data-filter="infra">Infraestrutura</button>
+            <button class="filter-btn" type="button" data-filter="cloud">Cloud</button>
+            <button class="filter-btn" type="button" data-filter="observability">Observabilidade</button>
+            <button class="filter-btn" type="button" data-filter="cyber">Cybersecurity</button>
+            <button class="filter-btn" type="button" data-filter="automation">Automação</button>
+          </div>
+
+          <div class="projects-grid">
+            <article
+              class="card featured-project"
+              data-category="cyber cloud automation observability"
+              id="cloud-soc-guardian"
+            >
+              <div class="card-top">
+                <span class="badge">Projeto principal | FastAPI + SQLite</span>
+                <span class="project-mark guardian" aria-hidden="true"></span>
+              </div>
+              <h3>Cloud SOC Guardian</h3>
+              <p>
+                Aplicação defensiva para demonstrar um fluxo de SOC e Blue Team: inventário de
+                ativos, ingestão de logs, regras de detecção, findings deduplicados e relatórios em
+                Markdown/JSON.
+              </p>
+              <div class="impact">
+                <strong>Impacto:</strong> transforma o portfólio em uma demonstração navegável de
+                Python, FastAPI, SQLite, automação, arquitetura de software e segurança defensiva.
+              </div>
+              <div class="tags">
+                <span class="tag">FastAPI</span>
+                <span class="tag">Python</span>
+                <span class="tag">SQLite</span>
+                <span class="tag">Blue Team</span>
+                <span class="tag">Cloud Security</span>
+                <span class="tag">Relatórios</span>
+              </div>
+              <div class="project-links">
+                <a class="button primary" href="projetos/lab.html?project=cloud-soc-guardian&amp;view=overview">
+                  Ver case
+                </a>
+                <a class="button" href="projetos/lab.html?project=cloud-soc-guardian&amp;view=demo">
+                  Abrir aplicação
+                </a>
+              </div>
+            </article>
+
+            <article id="enterprise-home-lab" class="card" data-category="infra cloud cyber">
+              <div class="card-top">
+                <span class="badge">Em evolução</span>
+                <span class="project-mark" aria-hidden="true"></span>
+              </div>
+              <h3>Enterprise Home Lab</h3>
+              <p>
+                Ambiente corporativo simulado com Active Directory, Docker, Linux Server, backup,
+                monitoramento e políticas de segurança.
+              </p>
+              <div class="impact">
+                <strong>Impacto:</strong> Infra completa para testes de administração, hardening e
+                continuidade.
+              </div>
+              <div class="tags">
+                <span class="tag">Proxmox</span>
+                <span class="tag">Windows Server</span>
+                <span class="tag">Docker</span>
+                <span class="tag">Linux</span>
+                <span class="tag">AD DS</span>
+              </div>
+              <div class="project-links">
+                <a class="button primary" href="projetos/lab.html?project=enterprise-home-lab&amp;view=overview">Ver base</a>
+                <a class="button" href="projetos/lab.html?project=enterprise-home-lab&amp;view=demo">Abrir demo</a>
+              </div>
+            </article>
+
+            <article id="monitoramento-zabbix-grafana" class="card" data-category="observability infra">
+              <div class="card-top">
+                <span class="badge">Documentado</span>
+                <span class="project-mark" aria-hidden="true"></span>
+              </div>
+              <h3>Monitoramento com Zabbix + Grafana</h3>
+              <p>
+                Observabilidade de infraestrutura com dashboards, alertas, métricas de
+                disponibilidade e acompanhamento de serviços críticos.
+              </p>
+              <div class="impact">
+                <strong>Impacto:</strong> Visão operacional clara para reduzir tempo de resposta a
+                incidentes.
+              </div>
+              <div class="tags">
+                <span class="tag">Zabbix</span>
+                <span class="tag">Grafana</span>
+                <span class="tag">Linux</span>
+                <span class="tag">Dashboards</span>
+              </div>
+              <div class="project-links">
+                <a class="button primary" href="projetos/lab.html?project=monitoramento-zabbix-grafana&amp;view=overview">Ver base</a>
+                <a class="button" href="projetos/lab.html?project=monitoramento-zabbix-grafana&amp;view=demo">Abrir demo</a>
+              </div>
+            </article>
+
+            <article id="siem-wazuh" class="card" data-category="cyber observability">
+              <div class="card-top">
+                <span class="badge">Lab ativo</span>
+                <span class="project-mark" aria-hidden="true"></span>
+              </div>
+              <h3>SIEM com Wazuh</h3>
+              <p>
+                Centralização de logs, detecção de ameaças, inventário de agentes e monitoramento
+                de eventos de segurança.
+              </p>
+              <div class="impact">
+                <strong>Impacto:</strong> Base prática para investigação, resposta e melhoria
+                contínua de segurança.
+              </div>
+              <div class="tags">
+                <span class="tag">Wazuh</span>
+                <span class="tag">SIEM</span>
+                <span class="tag">Cybersecurity</span>
+                <span class="tag">Linux</span>
+              </div>
+              <div class="project-links">
+                <a class="button primary" href="projetos/lab.html?project=siem-wazuh&amp;view=overview">Ver base</a>
+                <a class="button" href="projetos/lab.html?project=siem-wazuh&amp;view=demo">Abrir demo</a>
+              </div>
+            </article>
+
+            <article id="automacao-powershell" class="card" data-category="automation infra">
+              <div class="card-top">
+                <span class="badge">Scripts próprios</span>
+                <span class="project-mark" aria-hidden="true"></span>
+              </div>
+              <h3>Automação PowerShell</h3>
+              <p>
+                Scripts para inventário, criação de usuários, rotinas de backup, coleta de
+                informações e automações administrativas.
+              </p>
+              <div class="impact">
+                <strong>Impacto:</strong> Menos tarefas repetitivas e mais padronização no suporte
+                corporativo.
+              </div>
+              <div class="tags">
+                <span class="tag">PowerShell</span>
+                <span class="tag">Windows</span>
+                <span class="tag">Automation</span>
+              </div>
+              <div class="project-links">
+                <a class="button primary" href="projetos/lab.html?project=automacao-powershell&amp;view=overview">Ver base</a>
+                <a class="button" href="projetos/lab.html?project=automacao-powershell&amp;view=demo">Abrir demo</a>
+              </div>
+            </article>
+            <article id="diagnostico-windows-corporativo" class="card" data-category="automation infra cyber">
+              <div class="card-top">
+                <span class="badge">Diagnostico seguro</span>
+                <span class="project-mark" aria-hidden="true"></span>
+              </div>
+              <h3>Diagnostico Corporativo Windows</h3>
+              <p>
+                Base administrativa somente leitura para coletar evidencias de sistema, servicos e
+                gestao corporativa, com relatorios TXT/CSV e sem reparos automaticos.
+              </p>
+              <div class="tags">
+                <span class="tag">PowerShell</span>
+                <span class="tag">SCCM/MECM</span>
+                <span class="tag">Intune</span>
+              </div>
+              <div class="project-links">
+                <a class="button primary" href="projetos/lab.html?project=diagnostico-windows-corporativo&amp;view=overview">Ver base</a>
+                <a class="button" href="projetos/lab.html?project=diagnostico-windows-corporativo&amp;view=demo">Abrir demo</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">Roadmap</p>
+              <h2 class="section-title">Evolução técnica</h2>
+            </div>
+          </div>
+
+          <div class="roadmap-grid">
+            <article class="roadmap-card cloud">
+              <span class="roadmap-icon cloud" aria-hidden="true"></span>
+              <span class="step-number">1</span>
+              <h3>Cloud Computing</h3>
+              <p>Arquitetura, redes, IAM, storage e boas práticas em Azure e AWS.</p>
+            </article>
+            <article class="roadmap-card cyber">
+              <span class="roadmap-icon shield" aria-hidden="true"></span>
+              <span class="step-number">2</span>
+              <h3>Cybersecurity & SIEM</h3>
+              <p>Logs, detecção, hardening, resposta a incidentes e Wazuh.</p>
+            </article>
+            <article class="roadmap-card devsecops">
+              <span class="roadmap-icon bolt" aria-hidden="true"></span>
+              <span class="step-number">3</span>
+              <h3>DevSecOps</h3>
+              <p>Automação, conteineres, pipelines e segurança integrada ao ciclo técnico.</p>
+            </article>
+            <article class="roadmap-card observability">
+              <span class="roadmap-icon pulse" aria-hidden="true"><span></span></span>
+              <span class="step-number">4</span>
+              <h3>Observabilidade</h3>
+              <p>Monitoramento, métricas, alertas e dashboards orientados a operação.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="certificacoes" class="filter-section">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">Certificações</p>
+              <h2 class="section-title">Credenciais em destaque</h2>
+            </div>
+            <p>
+              Certificações, credenciais e reconhecimentos com validação explícita no certificado,
+              priorizando cybersecurity, cloud, plataforma Falcon e comunicação profissional.
+            </p>
+          </div>
+
+          <div class="filter-container" aria-label="Filtrar certificações">
+            <button class="filter-btn active" type="button" data-filter="all">Todos</button>
+            <button class="filter-btn" type="button" data-filter="cloud">Cloud</button>
+            <button class="filter-btn" type="button" data-filter="cyber">Cybersecurity</button>
+            <button class="filter-btn" type="button" data-filter="ia">IA</button>
+            <button class="filter-btn" type="button" data-filter="english">Inglês</button>
+          </div>
+
+          <div class="cert-grid">
+            <article class="cert-card" data-category="cloud ia">
+              <div class="cert-top">
+                <span class="badge">Cloud & IA</span>
+                <span class="cert-date">PDF</span>
+              </div>
+              <div class="cert-org">AWS</div>
+              <h3>AWS AI Practitioner - Discovery Day</h3>
+              <p>Fundamentos de inteligência artificial aplicada ao ecossistema AWS.</p>
+              <div class="meta-list">
+                <div class="meta-item"><strong>Data</strong><span>09/08/2025</span></div>
+                <div class="meta-item"><strong>Carga horária</strong><span>4 horas</span></div>
+                <div class="meta-item"><strong>Credencial</strong><span>8A79068F-35A1-48F4-BA66-CEAE7CDE9C5A</span></div>
+              </div>
+              <a
+                class="cert-link"
+                href="certificado.html?id=aws-ai-practitioner"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver detalhes
+              </a>
+            </article>
+
+            <article class="cert-card" data-category="cyber">
+              <div class="cert-top">
+                <span class="badge">Cybersecurity</span>
+                <span class="cert-date">PDF</span>
+              </div>
+              <div class="cert-org">Hack & Fix Academy</div>
+              <h3>Certified Phishing Prevention Specialist (CPPS)</h3>
+              <p>Reconhecimento em prevenção de phishing e conscientização defensiva.</p>
+              <div class="meta-list">
+                <div class="meta-item"><strong>Data</strong><span>20/12/2025</span></div>
+                <div class="meta-item"><strong>Carga horária</strong><span>Não informada no certificado</span></div>
+                <div class="meta-item"><strong>ID</strong><span>4119-1480-2348-3994</span></div>
+              </div>
+              <a
+                class="cert-link"
+                href="certificado.html?id=hack-fix-cpps"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver detalhes
+              </a>
+            </article>
+
+            <article class="cert-card" data-category="cyber">
+              <div class="cert-top">
+                <span class="badge">EDR & SecOps</span>
+                <span class="cert-date">PDF</span>
+              </div>
+              <div class="cert-org">CrowdStrike</div>
+              <h3>FALCON 101: Falcon Platform Essentials</h3>
+              <p>Fundamentos essenciais da plataforma Falcon para operação de segurança.</p>
+              <div class="meta-list">
+                <div class="meta-item"><strong>Data</strong><span>29/12/2025</span></div>
+                <div class="meta-item"><strong>Carga horária</strong><span>Não informada no certificado</span></div>
+                <div class="meta-item"><strong>Certificado</strong><span>C488389</span></div>
+              </div>
+              <a
+                class="cert-link"
+                href="certificado.html?id=crowdstrike-falcon-101"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver detalhes
+              </a>
+            </article>
+
+            <article class="cert-card" data-category="cyber">
+              <div class="cert-top">
+                <span class="badge">Cybersecurity</span>
+                <span class="cert-date">PDF</span>
+              </div>
+              <div class="cert-org">Hack & Fix Academy</div>
+              <h3>Cybersecurity Career Starter Certification (CCSC)</h3>
+              <p>Reconhecimento de conclusão em fundamentos de carreira em cybersecurity.</p>
+              <div class="meta-list">
+                <div class="meta-item"><strong>Data</strong><span>20/12/2025</span></div>
+                <div class="meta-item"><strong>Carga horária</strong><span>Não informada no certificado</span></div>
+                <div class="meta-item"><strong>ID</strong><span>2130-2916-6036-4119</span></div>
+              </div>
+              <a
+                class="cert-link"
+                href="certificado.html?id=hack-fix-ccsc"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver detalhes
+              </a>
+            </article>
+
+            <article class="cert-card" data-category="cyber">
+              <div class="cert-top">
+                <span class="badge">EDR & SecOps</span>
+                <span class="cert-date">PDF</span>
+              </div>
+              <div class="cert-org">CrowdStrike</div>
+              <h3>FALCON 100: Falcon Platform Architecture Overview</h3>
+              <p>Visão geral de arquitetura da plataforma Falcon para segurança e proteção de endpoints.</p>
+              <div class="meta-list">
+                <div class="meta-item"><strong>Data</strong><span>23/12/2025</span></div>
+                <div class="meta-item"><strong>Carga horária</strong><span>Não informada no certificado</span></div>
+                <div class="meta-item"><strong>Certificado</strong><span>C485022</span></div>
+              </div>
+              <a
+                class="cert-link"
+                href="certificado.html?id=crowdstrike-falcon-100"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver detalhes
+              </a>
+            </article>
+
+            <article class="cert-card" data-category="english">
+              <div class="cert-top">
+                <span class="badge">Inglês</span>
+                <span class="cert-date">PDF</span>
+              </div>
+              <div class="cert-org">EF SET</div>
+              <h3>EF SET Certificate</h3>
+              <p>Certificado de proficiência em inglês com resultado C1 Advanced.</p>
+              <div class="meta-list">
+                <div class="meta-item"><strong>Data</strong><span>20/12/2025</span></div>
+                <div class="meta-item"><strong>Resultado</strong><span>63/100 | C1 Advanced</span></div>
+                <div class="meta-item"><strong>Detalhe</strong><span>Reading C2 | Listening B2</span></div>
+                <div class="meta-item"><strong>Validação</strong><span>cert.efset.org/jtHw45</span></div>
+              </div>
+              <a
+                class="cert-link"
+                href="certificado.html?id=ef-set-c1"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver detalhes
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="certificados" class="filter-section">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">Certificados de Cursos</p>
+              <h2 class="section-title">Formação complementar</h2>
+            </div>
+            <p>
+              Certificados de conclusão com carga horária, data, instrutor e código quando esses
+              dados aparecem no próprio documento.
+            </p>
+          </div>
+
+          <div class="filter-container" aria-label="Filtrar certificados de cursos">
+            <button class="filter-btn active" type="button" data-filter="all">Todos</button>
+            <button class="filter-btn" type="button" data-filter="cloud">Cloud</button>
+            <button class="filter-btn" type="button" data-filter="cyber">Cybersecurity</button>
+            <button class="filter-btn" type="button" data-filter="ia">IA</button>
+            <button class="filter-btn" type="button" data-filter="governance">Governança</button>
+          </div>
+
+          <div class="certificate-grid">
+            <article class="certificate-card" data-category="cloud">
+              <span class="badge">AWS</span>
+              <h3>AWS Skill Builder Learner Guide</h3>
+              <p>Treinamento introdutório para serviços, fundamentos e modelos de uso da AWS.</p>
+              <div class="meta-list">
+                <div class="meta-item"><strong>Emissor</strong><span>AWS Skill Builder</span></div>
+                <div class="meta-item"><strong>Data</strong><span>09/07/2024</span></div>
+                <div class="meta-item"><strong>Carga horária</strong><span>Não informada no certificado</span></div>
+              </div>
+              <a
+                class="cert-link"
+                href="certificado.html?id=aws-skill-builder"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver detalhes
+              </a>
+            </article>
+
+            <article class="certificate-card" data-category="cloud">
+              <span class="badge">Microsoft Azure</span>
+              <h3>Introdução à Infraestrutura de Nuvem (AZ-900)</h3>
+              <p>Fundamentos de infraestrutura, serviços e conceitos de nuvem no Microsoft Azure.</p>
+              <div class="meta-list">
+                <div class="meta-item"><strong>Emissor</strong><span>Ka Solution</span></div>
+                <div class="meta-item"><strong>Data</strong><span>29/11/2025</span></div>
+                <div class="meta-item"><strong>Carga horária</strong><span>8 horas</span></div>
+                <div class="meta-item"><strong>Código</strong><span>5F7C6B5F-E32A-4CBA-8CB6-4CF0934EDAE8</span></div>
+              </div>
+              <a
+                class="cert-link"
+                href="certificado.html?id=az-900-intro"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver detalhes
+              </a>
+            </article>
+
+            <article class="certificate-card" data-category="cloud">
+              <span class="badge">Microsoft Azure</span>
+              <h3>Introdução ao Microsoft Azure Data (DP-900)</h3>
+              <p>Fundamentos de dados, serviços analíticos e conceitos de banco de dados no Azure.</p>
+              <div class="meta-list">
+                <div class="meta-item"><strong>Emissor</strong><span>Ka Solution</span></div>
+                <div class="meta-item"><strong>Data</strong><span>13/12/2025</span></div>
+                <div class="meta-item"><strong>Carga horária</strong><span>8 horas</span></div>
+                <div class="meta-item"><strong>Código</strong><span>8BD205D7-8459-4DE4-BCD0-D64E3DC9AC0B</span></div>
+              </div>
+              <a
+                class="cert-link"
+                href="certificado.html?id=dp-900-intro"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver detalhes
+              </a>
+            </article>
+
+            <article class="certificate-card" data-category="cyber">
+              <span class="badge">IAM</span>
+              <h3>Identity and Access Management (IAM)</h3>
+              <p>Gestão de identidade, acessos, permissões e governança de credenciais.</p>
+              <div class="meta-list">
+                <div class="meta-item"><strong>Emissor</strong><span>Udemy</span></div>
+                <div class="meta-item"><strong>Instrutor</strong><span>Rassoul Zadeh</span></div>
+                <div class="meta-item"><strong>Data</strong><span>07/01/2026</span></div>
+                <div class="meta-item"><strong>Duração</strong><span>10,5 horas</span></div>
+                <div class="meta-item"><strong>Credencial</strong><span>UC-05eec049-1af8-44e1-b360-dce2cd3cf809</span></div>
+              </div>
+              <a
+                class="cert-link"
+                href="certificado.html?id=iam"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver detalhes
+              </a>
+            </article>
+
+            <article class="certificate-card" data-category="cyber">
+              <span class="badge">PAM</span>
+              <h3>Privileged Account (Access) Management (PAM)</h3>
+              <p>Controle e proteção de contas privilegiadas em ambientes corporativos.</p>
+              <div class="meta-list">
+                <div class="meta-item"><strong>Emissor</strong><span>Udemy</span></div>
+                <div class="meta-item"><strong>Instrutor</strong><span>Rassoul Zadeh</span></div>
+                <div class="meta-item"><strong>Data</strong><span>23/01/2026</span></div>
+                <div class="meta-item"><strong>Duração</strong><span>12,5 horas</span></div>
+                <div class="meta-item"><strong>Credencial</strong><span>UC-5ab5f75b-7b6c-4a1b-869f-9ffd9e54f76c</span></div>
+              </div>
+              <a
+                class="cert-link"
+                href="certificado.html?id=pam"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver detalhes
+              </a>
+            </article>
+
+            <article class="certificate-card" data-category="governance">
+              <span class="badge">GRC</span>
+              <h3>COSO | Gestão de Risco Corporativo e Controles Internos</h3>
+              <p>Fundamentos de gestão de risco, controles internos e governança corporativa.</p>
+              <div class="meta-list">
+                <div class="meta-item"><strong>Emissor</strong><span>Udemy</span></div>
+                <div class="meta-item"><strong>Instrutor</strong><span>Uires Tapajós</span></div>
+                <div class="meta-item"><strong>Data</strong><span>05/01/2026</span></div>
+                <div class="meta-item"><strong>Duração</strong><span>9 horas</span></div>
+                <div class="meta-item"><strong>Credencial</strong><span>UC-8dcbc3b1-239e-48ca-9471-f0e410e869ab</span></div>
+              </div>
+              <a
+                class="cert-link"
+                href="certificado.html?id=coso"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver detalhes
+              </a>
+            </article>
+
+            <article class="certificate-card" data-category="governance">
+              <span class="badge">ITSM</span>
+              <h3>Gestão e Governança na Prática: Cobit, ITIL, Scrum e PMBOK</h3>
+              <p>Boas práticas para gestão de serviços, suporte, operação e melhoria contínua.</p>
+              <div class="meta-list">
+                <div class="meta-item"><strong>Data</strong><span>22/11/2025</span></div>
+                <div class="meta-item"><strong>Carga horária</strong><span>4 horas</span></div>
+                <div class="meta-item"><strong>Credencial</strong><span>53B20FAC-785A-445E-8714-8DB26F110382</span></div>
+              </div>
+              <a
+                class="cert-link"
+                href="certificado.html?id=itil-cobit-scrum-pmbok"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver detalhes
+              </a>
+            </article>
+
+            <article class="certificate-card" data-category="ia">
+              <span class="badge">IA</span>
+              <h3>Copilot Essentials in Microsoft Office</h3>
+              <p>Uso de Copilot e IA aplicada à produtividade no Microsoft Office.</p>
+              <div class="meta-list">
+                <div class="meta-item"><strong>Emissor</strong><span>Udemy</span></div>
+                <div class="meta-item"><strong>Instrutor</strong><span>Simon Sez IT</span></div>
+                <div class="meta-item"><strong>Data</strong><span>15/01/2026</span></div>
+                <div class="meta-item"><strong>Duração</strong><span>1 hora</span></div>
+                <div class="meta-item"><strong>Credencial</strong><span>UC-6ab8e454-229f-4c7d-8ce1-f598e3137b4a</span></div>
+              </div>
+              <a
+                class="cert-link"
+                href="certificado.html?id=copilot-office"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver detalhes
+              </a>
+            </article>
+
+            <article class="certificate-card" data-category="ia">
+              <span class="badge">IA</span>
+              <h3>Generative AI Unleashed: Exploring Possibilities and Future</h3>
+              <p>Possibilidades, tendências e aplicações de inteligência artificial generativa.</p>
+              <div class="meta-list">
+                <div class="meta-item"><strong>Emissor</strong><span>Udemy</span></div>
+                <div class="meta-item"><strong>Instrutor</strong><span>Learnsector LLP</span></div>
+                <div class="meta-item"><strong>Data</strong><span>15/01/2026</span></div>
+                <div class="meta-item"><strong>Duração</strong><span>1 hora</span></div>
+                <div class="meta-item"><strong>Credencial</strong><span>UC-89cdb29e-b0d9-4ea6-aa20-72dff664411a</span></div>
+              </div>
+              <a
+                class="cert-link"
+                href="certificado.html?id=generative-ai"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver detalhes
+              </a>
+            </article>
+
+            <article class="certificate-card" data-category="ia">
+              <span class="badge">IA</span>
+              <h3>Intro to AI Agents and Agentic AI</h3>
+              <p>Conceitos de agentes de IA, automação inteligente e fluxos agentivos.</p>
+              <div class="meta-list">
+                <div class="meta-item"><strong>Emissor</strong><span>Udemy</span></div>
+                <div class="meta-item"><strong>Instrutor</strong><span>365 Careers</span></div>
+                <div class="meta-item"><strong>Data</strong><span>15/01/2026</span></div>
+                <div class="meta-item"><strong>Duração</strong><span>2 horas</span></div>
+                <div class="meta-item"><strong>Credencial</strong><span>UC-9798fe20-2200-429b-8aff-1510290c3a68</span></div>
+              </div>
+              <a
+                class="cert-link"
+                href="certificado.html?id=ai-agents"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver detalhes
+              </a>
+            </article>
+
+            <article class="certificate-card" data-category="ia automation">
+              <span class="badge">IA</span>
+              <h3>Practical Vibe Coding AI-Powered Software Development</h3>
+              <p>Desenvolvimento assistido por IA, prototipação e aceleração de fluxo técnico.</p>
+              <div class="meta-list">
+                <div class="meta-item"><strong>Emissor</strong><span>Udemy</span></div>
+                <div class="meta-item"><strong>Instrutores</strong><span>Gustavo Escobar Henríquez, Digital Life Academy</span></div>
+                <div class="meta-item"><strong>Data</strong><span>15/01/2026</span></div>
+                <div class="meta-item"><strong>Duração</strong><span>2,5 horas</span></div>
+                <div class="meta-item"><strong>Credencial</strong><span>UC-4968e73e-cd7b-4df6-82a0-508cdd3c69d6</span></div>
+              </div>
+              <a
+                class="cert-link"
+                href="certificado.html?id=vibe-coding"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver detalhes
+              </a>
+            </article>
+
+            <article class="certificate-card" data-category="ia">
+              <span class="badge">IA</span>
+              <h3>Prompt Engineering for Work</h3>
+              <p>Boas práticas de prompts para produtividade, documentação e tarefas profissionais.</p>
+              <div class="meta-list">
+                <div class="meta-item"><strong>Emissor</strong><span>Udemy</span></div>
+                <div class="meta-item"><strong>Instrutor</strong><span>Steve Ballinger, MBA</span></div>
+                <div class="meta-item"><strong>Data</strong><span>15/01/2026</span></div>
+                <div class="meta-item"><strong>Duração</strong><span>1,5 horas</span></div>
+                <div class="meta-item"><strong>Credencial</strong><span>UC-137c7d1e-3a97-462a-80d5-acf137ac62f4</span></div>
+              </div>
+              <a
+                class="cert-link"
+                href="certificado.html?id=prompt-engineering"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver detalhes
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contato">
+        <div class="container">
+          <p class="section-kicker">Contato</p>
+          <h2 class="section-title">
+            Aberto para oportunidades em infraestrutura, cloud e segurança.
+          </h2>
+
+          <p class="contact-copy">
+            Entre em contato para oportunidades em infraestrutura, cloud, observabilidade,
+            automação e segurança da informação.
+          </p>
+
+          <div class="actions">
+            <a class="button primary" href="http://www.linkedin.com/in/lorrandaniel" target="_blank" rel="noreferrer">
+              LinkedIn
+            </a>
+            <a class="button" href="mailto:lorrandaniel.silva.work@gmail.com">lorrandaniel.silva.work@gmail.com</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <button id="scrollTopBtn" type="button" title="Voltar ao topo">↑ Topo</button>
+    <script>
+      document.querySelectorAll('a.cert-link[href^="certificado.html"]').forEach((link) => {
+        link.removeAttribute("target");
+        link.removeAttribute("rel");
+      });
+
+      document.querySelectorAll(".filter-section").forEach((section) => {
+        const buttons = section.querySelectorAll(".filter-btn");
+        const cards = section.querySelectorAll("article[data-category]");
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", () => {
+            buttons.forEach((item) => item.classList.remove("active"));
+            button.classList.add("active");
+
+            const filterValue = button.dataset.filter;
+
+            cards.forEach((card) => {
+              const categories = (card.dataset.category || "").split(" ");
+              card.hidden = filterValue !== "all" && !categories.includes(filterValue);
+            });
+          });
+        });
+      });
+
+      const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+      window.addEventListener("scroll", () => {
+        const isVisible = document.documentElement.scrollTop > 420 || document.body.scrollTop > 420;
+        scrollTopBtn.style.display = isVisible ? "inline-flex" : "none";
+      });
+
+      scrollTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+    <script src="js/portfolio-i18n.js?v=20261030-index"></script>
+  </body>
+</html>
